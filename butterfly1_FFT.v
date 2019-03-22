@@ -20,9 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 module butterfly1_FFT(
     input [15:0] a,b,
-	 input ctrl,
+	 input en,clk,rst,ctrl,
     output [15:0] c,d
     );
-	adder_16bit A1(b,a,ctrl,c);
-	adder_16bit A2(a,b,~ctrl,d);
+	adder_16bit A1(b,a,ctrl,en,clk,rst,c);
+	adder_16bit A2(a,b,~ctrl,en,clk,rst,d);
 endmodule

@@ -20,9 +20,12 @@
 //////////////////////////////////////////////////////////////////////////////////
 module butterfly2_FFT(
     input [15:0] r,i,
+	 input en,clk,rst,
     output [15:0] r1,i1,r2,i2 );
-	assign r1=r;
-	assign i1=i;
-	assign r2=r;
-	assign i2=-i;
+	 wire [15:0] _i;
+	 memory_reg_16bit R1(r,en,clk,rst,r1);
+	 memory_reg_16bit R2(i,en,clk,rst,i1);
+	 memory_reg_16bit R3(r,en,clk,rst,r2);
+	 memory_reg_16bit R4(i,en,clk,rst,_i);
+	 assign i2=-_i;
 endmodule
