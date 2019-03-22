@@ -21,16 +21,18 @@
 module memory_reg_16bit(
 	 input [15:0] d,
     input en,clk,rst,
-    output reg [15:0] q
+    output [15:0] q
     );
 	 reg [15:0] mem;
-initial q=0;
+initial mem=16'b0;
 always@(posedge clk) begin
-	if(rst)	q=0;
+	if(rst)	mem=16'b0;
 	else begin
 		if(en)
-			q=d;
+			mem=d;
+		else
+			mem=16'b0;
 	end
 end
-
+assign q=mem;
 endmodule
