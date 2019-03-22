@@ -1,0 +1,6 @@
+
+#Created by Constraints Editor (xc3s500e-fg320-4) - 2019/03/20
+NET "clk" TNM_NET = clk;
+TIMESPEC TS_clk = PERIOD "clk" 9 ns HIGH 50%;
+NET "clk" LOC = "C9";
+NET "start" LOC = "L14";
