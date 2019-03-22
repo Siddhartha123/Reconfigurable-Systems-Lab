@@ -2,3 +2,5 @@
 *
 !.gitignore
 !*.v
+!*.cdc
+!*.ucf
